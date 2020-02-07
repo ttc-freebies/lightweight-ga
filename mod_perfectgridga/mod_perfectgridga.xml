@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.9" client="site" method="install">
+  <name>MOD_PERFECTGRIDGA</name>
+  <description>MOD_PERFECTGRIDGA_XML_DESCRIPTION</description>
+  <author>Perfectgrid.io</author>
+  <copyright>(C) 2020 Perfectgrid.io, All Rights Reserved.</copyright>
+  <creationDate>02/2020</creationDate>
+  <license>GNU General Public License version 2 or later</license>
+  <authorEmail>support@perfectgrid.io</authorEmail>
+  <authorUrl>https://perfectgrid.io</authorUrl>
+  <version>1.0.0</version>
+  <files>
+    <filename module="mod_perfectgridga">mod_perfectgridga.php</filename>
+    <filename>mod_perfectgridga.xml</filename>
+  </files>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.mod_perfectgridga.ini</language>
+    <language tag="en-GB">en-GB/en-GB.mod_perfectgridga.sys.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field
+          name="site-code-ga"
+          type="text"
+		  default="XX-XXXXXXXXX-X"
+          label="MOD_PERFECTGRIDGA_FIELD__GA_CODE_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD__GA_CODE_DESC"
+        />
+
+        <field
+          name="anonymized-ip"
+          type="list"
+          label="MOD_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_DESC"
+          default="1"
+          filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field
+          name="color-depth"
+          type="list"
+          label="MOD_PERFECTGRIDGA_FIELD_COLOR_DEPTH_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD_COLOR_DEPTH_DESC"
+          default="1"
+          filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+
+        <field
+          name="character-set"
+          type="list"
+          label="MOD_PERFECTGRIDGA_FIELD_CHARACTER_SET_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD_CHARACTER_SET_DESC"
+          default="1"
+          filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field
+          name="screen-size"
+          type="list"
+          label="MOD_PERFECTGRIDGA_FIELD_SCREEN_SIZE_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD_SCREEN_SIZE_DESC"
+          default="1"
+          filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field
+          name="language"
+          type="list"
+          label="MOD_PERFECTGRIDGA_FIELD_LANGUAGE_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD_LANGUAGE_DESC"
+          default="1"
+          filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+
+
+      </fieldset>
+
+      <fieldset name="advanced">
+        <field
+          name="moduleclass_sfx"
+          type="textarea"
+          label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+          description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC"
+          rows="3"
+        />
+
+        <field
+          name="cache"
+          type="list"
+          label="COM_MODULES_FIELD_CACHING_LABEL"
+          description="COM_MODULES_FIELD_CACHING_DESC"
+          default="1"
+          filter="integer"
+        >
+          <option value="1">JGLOBAL_USE_GLOBAL</option>
+          <option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+        </field>
+
+        <field
+          name="cache_time"
+          type="number"
+          label="COM_MODULES_FIELD_CACHE_TIME_LABEL"
+          description="COM_MODULES_FIELD_CACHE_TIME_DESC"
+          default="900"
+          filter="integer"
+        />
+
+        <field
+          name="cachemode"
+          type="hidden"
+          default="itemid"
+        >
+          <option value="itemid"></option>
+        </field>
+      </fieldset>
+    </fields>
+  </config>
+</extension>
