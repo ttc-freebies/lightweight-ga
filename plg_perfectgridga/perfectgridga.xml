@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.1" type="plugin" group="system" method="upgrade">
+  <name>PLG_PERFECTGRIDGA</name>
+  <description>PLG_PERFECTGRIDGA_XML_DESCRIPTION</description>
+  <author>Perfectgrid.io</author>
+  <copyright>(C) 2020 Perfectgrid.io, All Rights Reserved.</copyright>
+  <creationDate>02/2020</creationDate>
+  <license>GNU General Public License version 2 or later</license>
+  <authorEmail>support@perfectgrid.io</authorEmail>
+  <authorUrl>https://perfectgrid.io</authorUrl>
+  <version>1.0.0</version>
+  <files>
+    <filename plugin="perfectgridga">perfectgridga.php</filename>
+  </files>
+  <languages folder="language">
+    <language tag="en-GB">en-GB/en-GB.plg_system_perfectgridga.ini</language>
+    <language tag="en-GB">en-GB/en-GB.plg_system_perfectgridga.sys.ini</language>
+  </languages>
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field
+            name="site-code-ga"
+            type="text"
+            default="XX-XXXXXXXXX-X"
+            label="PLG_PERFECTGRIDGA_FIELD__GA_CODE_LABEL"
+            description="PLG_PERFECTGRIDGA_FIELD__GA_CODE_DESC"
+        />
+        <field
+            name="module-position"
+            type="text"
+            default="debug"
+            label="PLG_PERFECTGRIDGA_FIELD_POSITION_LABEL"
+            description="PLG_PERFECTGRIDGA_FIELD_POSITION_DESC"
+        />
+        <field
+            name="anonymized-ip"
+            type="list"
+            label="PLG_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_LABEL"
+            description="PLG_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_DESC"
+            default="1"
+            filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field
+            name="color-depth"
+            type="list"
+            label="PLG_PERFECTGRIDGA_FIELD_COLOR_DEPTH_LABEL"
+            description="PLG_PERFECTGRIDGA_FIELD_COLOR_DEPTH_DESC"
+            default="1"
+            filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field
+            name="character-set"
+            type="list"
+            label="PLG_PERFECTGRIDGA_FIELD_CHARACTER_SET_LABEL"
+            description="PLG_PERFECTGRIDGA_FIELD_CHARACTER_SET_DESC"
+            default="1"
+            filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field
+            name="screen-size"
+            type="list"
+            label="PLG_PERFECTGRIDGA_FIELD_SCREEN_SIZE_LABEL"
+            description="PLG_PERFECTGRIDGA_FIELD_SCREEN_SIZE_DESC"
+            default="1"
+            filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+        <field
+            name="language"
+            type="list"
+            label="PLG_PERFECTGRIDGA_FIELD_LANGUAGE_LABEL"
+            description="PLG_PERFECTGRIDGA_FIELD_LANGUAGE_DESC"
+            default="1"
+            filter="integer"
+        >
+          <option value="1">JYES</option>
+          <option value="0">JNO</option>
+        </field>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

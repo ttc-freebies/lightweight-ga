@@ -1,0 +1,26 @@
+{
+  "name": "lightweight-ga",
+  "version": "1.0.0",
+  "description": "Google analytics lightweight",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/perfectgrid-freebies/lightweight-ga.git"
+  },
+  "keywords": [
+    "joomla",
+    "module",
+    "google",
+    "analytics",
+    "performance"
+  ],
+  "author": "Dimitrios Grammatikogiannis",
+  "license": "GPL-2.0",
+  "bugs": {
+    "url": "https://github.com/perfectgrid-freebies/lightweight-ga/issues"
+  },
+  "homepage": "https://github.com/perfectgrid-freebies/lightweight-ga#readme"
+}
