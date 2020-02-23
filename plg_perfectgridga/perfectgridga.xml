@@ -3,12 +3,12 @@
   <name>PLG_PERFECTGRIDGA</name>
   <description>PLG_PERFECTGRIDGA_XML_DESCRIPTION</description>
   <author>Perfectgrid.io</author>
-  <copyright>(C) 2020 Perfectgrid.io, All Rights Reserved.</copyright>
-  <creationDate>02/2020</creationDate>
+  <copyright>{{copyright}}</copyright>
+  <creationDate>{{date}}</creationDate>
   <license>GNU General Public License version 2 or later</license>
   <authorEmail>support@perfectgrid.io</authorEmail>
   <authorUrl>https://perfectgrid.io</authorUrl>
-  <version>1.0.0</version>
+  <version>{{version}}</version>
   <files>
     <filename plugin="perfectgridga">perfectgridga.php</filename>
   </files>
@@ -35,59 +35,79 @@
         />
         <field
             name="anonymized-ip"
-            type="list"
+            type="radio"
             label="PLG_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_LABEL"
             description="PLG_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_DESC"
             default="1"
             filter="integer"
+            class="btn-group btn-group-yesno"
         >
-          <option value="1">JYES</option>
           <option value="0">JNO</option>
+          <option value="1">JYES</option>
         </field>
         <field
             name="color-depth"
-            type="list"
+            type="radio"
             label="PLG_PERFECTGRIDGA_FIELD_COLOR_DEPTH_LABEL"
             description="PLG_PERFECTGRIDGA_FIELD_COLOR_DEPTH_DESC"
             default="1"
             filter="integer"
+            class="btn-group btn-group-yesno"
         >
-          <option value="1">JYES</option>
           <option value="0">JNO</option>
+          <option value="1">JYES</option>
         </field>
         <field
             name="character-set"
-            type="list"
+            type="radio"
             label="PLG_PERFECTGRIDGA_FIELD_CHARACTER_SET_LABEL"
             description="PLG_PERFECTGRIDGA_FIELD_CHARACTER_SET_DESC"
             default="1"
             filter="integer"
+            class="btn-group btn-group-yesno"
         >
-          <option value="1">JYES</option>
           <option value="0">JNO</option>
+          <option value="1">JYES</option>
         </field>
         <field
             name="screen-size"
-            type="list"
+            type="radio"
             label="PLG_PERFECTGRIDGA_FIELD_SCREEN_SIZE_LABEL"
             description="PLG_PERFECTGRIDGA_FIELD_SCREEN_SIZE_DESC"
             default="1"
             filter="integer"
+            class="btn-group btn-group-yesno"
         >
-          <option value="1">JYES</option>
           <option value="0">JNO</option>
+          <option value="1">JYES</option>
         </field>
         <field
             name="language"
-            type="list"
+            type="radio"
             label="PLG_PERFECTGRIDGA_FIELD_LANGUAGE_LABEL"
             description="PLG_PERFECTGRIDGA_FIELD_LANGUAGE_DESC"
             default="1"
-            filter="integer"
+            class="btn-group btn-group-yesno"
         >
-          <option value="1">JYES</option>
           <option value="0">JNO</option>
+          <option value="1">JYES</option>
         </field>
+        <field
+          name="onevent"
+          type="radio"
+          default="0"
+          label="Select an option"
+          description=""
+          class="btn-group btn-group-yesno"
+        >
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field
+          name="eventname"
+          type="text"
+          showon="onevent:1"
+        />
       </fieldset>
     </fields>
   </config>

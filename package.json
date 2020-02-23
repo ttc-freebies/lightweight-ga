@@ -4,7 +4,7 @@
   "description": "Google analytics lightweight",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "node build.js"
   },
   "repository": {
     "type": "git",
@@ -22,5 +22,22 @@
   "bugs": {
     "url": "https://github.com/perfectgrid-freebies/lightweight-ga/issues"
   },
-  "homepage": "https://github.com/perfectgrid-freebies/lightweight-ga#readme"
+  "homepage": "https://github.com/perfectgrid-freebies/lightweight-ga#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.10.0",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@rollup/plugin-replace": "^2.3.1",
+    "archiver": "^3.1.1",
+    "fs-extra": "^8.1.0",
+    "gist-fetch": "^1.0.1",
+    "glob": "^7.1.6",
+    "jszip": "^3.2.2",
+    "replace-in-file": "^5.0.2",
+    "rollup-plugin-babel": "^4.3.3"
+  },
+  "dependencies": {
+    "rollup-plugin-terser": "^5.2.0"
+  },
+  "browserslist": "> 0.25%, not dead"
 }

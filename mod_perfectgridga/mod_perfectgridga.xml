@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="3.9" client="site" method="install">
+<extension type="module" version="3.9" client="site" method="upgrade">
   <name>MOD_PERFECTGRIDGA</name>
   <description>MOD_PERFECTGRIDGA_XML_DESCRIPTION</description>
   <author>Perfectgrid.io</author>
-  <copyright>(C) 2020 Perfectgrid.io, All Rights Reserved.</copyright>
-  <creationDate>02/2020</creationDate>
+  <copyright>{{copyright}}</copyright>
+  <creationDate>{{date}}</creationDate>
   <license>GNU General Public License version 2 or later</license>
   <authorEmail>support@perfectgrid.io</authorEmail>
   <authorUrl>https://perfectgrid.io</authorUrl>
-  <version>1.0.0</version>
+  <version>{{version}}</version>
   <files>
     <filename module="mod_perfectgridga">mod_perfectgridga.php</filename>
     <filename>mod_perfectgridga.xml</filename>
