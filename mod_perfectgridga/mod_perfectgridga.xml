@@ -30,22 +30,24 @@
 
         <field
           name="anonymized-ip"
-          type="list"
+          type="radio"
           label="MOD_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_LABEL"
           description="MOD_PERFECTGRIDGA_FIELD_ANONYMIZED_IP_DESC"
           default="1"
           filter="integer"
+          class="btn-group btn-group-yesno"
         >
           <option value="1">JYES</option>
           <option value="0">JNO</option>
         </field>
         <field
           name="color-depth"
-          type="list"
+          type="radio"
           label="MOD_PERFECTGRIDGA_FIELD_COLOR_DEPTH_LABEL"
           description="MOD_PERFECTGRIDGA_FIELD_COLOR_DEPTH_DESC"
           default="1"
           filter="integer"
+          class="btn-group btn-group-yesno"
         >
           <option value="1">JYES</option>
           <option value="0">JNO</option>
@@ -53,41 +55,59 @@
 
         <field
           name="character-set"
-          type="list"
+          type="radio"
           label="MOD_PERFECTGRIDGA_FIELD_CHARACTER_SET_LABEL"
           description="MOD_PERFECTGRIDGA_FIELD_CHARACTER_SET_DESC"
           default="1"
           filter="integer"
+          class="btn-group btn-group-yesno"
         >
           <option value="1">JYES</option>
           <option value="0">JNO</option>
         </field>
         <field
           name="screen-size"
-          type="list"
+          type="radio"
           label="MOD_PERFECTGRIDGA_FIELD_SCREEN_SIZE_LABEL"
           description="MOD_PERFECTGRIDGA_FIELD_SCREEN_SIZE_DESC"
           default="1"
           filter="integer"
+          class="btn-group btn-group-yesno"
         >
           <option value="1">JYES</option>
           <option value="0">JNO</option>
         </field>
         <field
           name="language"
-          type="list"
+          type="radio"
           label="MOD_PERFECTGRIDGA_FIELD_LANGUAGE_LABEL"
           description="MOD_PERFECTGRIDGA_FIELD_LANGUAGE_DESC"
           default="1"
           filter="integer"
+          class="btn-group btn-group-yesno"
         >
           <option value="1">JYES</option>
           <option value="0">JNO</option>
         </field>
-
-
+        <field
+          name="onevent"
+          type="radio"
+          default="0"
+          label="MOD_PERFECTGRIDGA_FIELD_ONEVENT_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD_ONEVENT_DESC"
+          class="btn-group btn-group-yesno"
+        >
+          <option value="0">JNO</option>
+          <option value="1">JYES</option>
+        </field>
+        <field
+          name="eventname"
+          type="text"
+          label="MOD_PERFECTGRIDGA_FIELD_ONEVENTNAME_LABEL"
+          description="MOD_PERFECTGRIDGA_FIELD_ONEVENTNAME_DESC"
+          showon="onevent:1"
+        />
       </fieldset>
-
       <fieldset name="advanced">
         <field
           name="moduleclass_sfx"

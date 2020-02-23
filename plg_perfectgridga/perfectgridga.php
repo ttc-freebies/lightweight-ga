@@ -41,7 +41,7 @@ class PlgSystemPerfectgridga extends JPlugin {
     $language = boolval($this->params->get('language', 1)) === true ? 'true' : 'false';
     $siteCodeGA = (string) $this->params->get('site-code-ga', 'XX-XXXXXXXXX-X');
     $placement = (string) $this->params->get('module-position', 'debug');
-    $onEvent = boolval($this->params->get('onevent', 1)) === true ? 'true' : 'false';
+    $onEvent = boolval($this->params->get('onevent', 0));
     $eventName = (string) $this->params->get('eventname', 'DOMContentLoaded');
 
     if ($siteCodeGA === 'XX-XXXXXXXXX-X') {
@@ -56,14 +56,14 @@ class PlgSystemPerfectgridga extends JPlugin {
 
     $addition = new stdClass();
 
-    $addition->id = -1;
+    $addition->id = count($modules) + 1;
     $addition->title = '';
     $addition->module = 'mod_custom';
     $addition->position = $placement;
     $addition->content = '<script data-joomla-reposition="false">' . $scriptContent . '</script>';
     $addition->showtitle = 0;
     $addition->menuid = -1;
-    $addition->params = '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"0","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":"none"}';
+    $addition->params = '{"prepare_content":"0","backgroundimage":"","layout":"_:default","moduleclass_sfx":"","cache":"0","cache_time":"900","cachemode":"static","module_tag":"div","bootstrap_size":"0","header_tag":"h3","header_class":"","style":""}';
 
     array_push($modules, $addition);
   }

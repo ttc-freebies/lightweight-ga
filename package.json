@@ -4,7 +4,8 @@
   "description": "Google analytics lightweight",
   "main": "index.js",
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "docs": "npx http-server ./docs"
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "fs-extra": "^8.1.0",
     "gist-fetch": "^1.0.1",
     "glob": "^7.1.6",
+    "http-server": "^0.12.1",
     "jszip": "^3.2.2",
     "replace-in-file": "^5.0.2",
     "rollup-plugin-babel": "^4.3.3"

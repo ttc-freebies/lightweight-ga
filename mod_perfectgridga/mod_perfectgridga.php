@@ -7,7 +7,7 @@ $characterSet = boolval( $params->get('character-set', 1)) === true ? 'true' : '
 $screenSize = boolval($params->get('screen-size', 1)) === true ? 'true' : 'false';
 $language = boolval($params->get('language', 1)) === true ? 'true' : 'false';
 $siteCodeGA = (string) $params->get('site-code-ga', 'XX-XXXXXXXXX-X');
-$onEvent = boolval($params->get('onevent', 1)) === true ? 'true' : 'false';
+$onEvent = boolval($params->get('onevent', 0));
 $eventName = (string) $params->get('eventname', 'DOMContentLoaded');
 
 if ($siteCodeGA === 'XX-XXXXXXXXX-X') {

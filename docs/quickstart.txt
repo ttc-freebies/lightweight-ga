@@ -1,0 +1,7 @@
+# Quick start
+
+!> Download and install **either** the module or the plugin
+
+## Downloads
+```downloads```
+

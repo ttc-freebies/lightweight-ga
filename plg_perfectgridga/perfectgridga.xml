@@ -96,8 +96,8 @@
           name="onevent"
           type="radio"
           default="0"
-          label="Select an option"
-          description=""
+          label="PLG_PERFECTGRIDGA_FIELD_ONEVENT_LABEL"
+          description="PLG_PERFECTGRIDGA_FIELD_ONEVENT_DESC"
           class="btn-group btn-group-yesno"
         >
           <option value="0">JNO</option>
@@ -106,6 +106,8 @@
         <field
           name="eventname"
           type="text"
+          label="PLG_PERFECTGRIDGA_FIELD_ONEVENTNAME_LABEL"
+          description="PLG_PERFECTGRIDGA_FIELD_ONEVENTNAME_DESC"
           showon="onevent:1"
         />
       </fieldset>

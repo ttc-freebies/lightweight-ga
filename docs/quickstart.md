@@ -1,0 +1,11 @@
+# Quick start
+
+!> Download and install **either** the module or the plugin
+
+## Downloads
+
+ - [Module](/packages/mod_perfectgridga_v1.0.0.zip ':ignore')
+ - [Plugin](/packages/mod_perfectgridga_v1.0.0.zip ':ignore')
+
+
+
