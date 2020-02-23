@@ -161,7 +161,7 @@ Promise.all([
 
 `;
 
-  fsExtra.writeFileSync(`${root}/docs/quickstart.md`, quickStartContent.replace('```downloads```', qS), { encoding: 'utf8' });
+  fsExtra.writeFileSync(`${root}/docs/quickstart.md`, quickStartContent.replace('```downloads```', qS).replace('```version```', pkg.version), { encoding: 'utf8' });
 
   // Build the upd server
   shaPlg = generateChecksum(readFileSync(`${root}/docs/pkgs/plg_perfectgridga_v${pkg.version}.zip`), 'sha512');

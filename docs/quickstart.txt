@@ -11,3 +11,4 @@ Respect your **users** send the least possible JavaScript (without loosing any c
 ## Downloads
 ```downloads```
 
+Latest vesrion: ```version```
