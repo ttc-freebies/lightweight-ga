@@ -1,13 +1,21 @@
 //Load the library and specify options
 const replace = require('replace-in-file');
 const fsExtra = require('fs-extra');
-const fs = require('fs');
+const { readFile, readFileSync, existsSync, createWriteStream } = require('fs');
 const archiver = require("archiver");
 const { execSync } = require('child_process');
+const crypto = require('crypto');
 
 const root = process.cwd();
 const pkg = require('./package.json');
 let scriptContent;
+
+function generateChecksum(str, algorithm, encoding) {
+  return crypto
+    .createHash(algorithm || 'md5')
+    .update(str, 'utf8')
+    .digest(encoding || 'hex');
+}
 
 // Cleanup
 fsExtra.removeSync(`${root}/dist`);
@@ -28,8 +36,8 @@ fsExtra.copySync(`${root}/plg_perfectgridga`, `${root}/dist/plg_perfectgridga`);
 // Run the rollup
 execSync('npx rollup -c rollup.config.js');
 
-if (fs.existsSync('dist/script.js')) {
-  scriptContent = fs.readFileSync('dist/script.js', { encoding: 'utf8' });
+if (existsSync('dist/script.js')) {
+  scriptContent = readFileSync('dist/script.js', { encoding: 'utf8' });
   scriptContent = scriptContent.replace(/\r?\n|\r/g, '');
   scriptContent = `<<<JS
 ${scriptContent}
@@ -96,13 +104,19 @@ replace.sync(optionsJs);
 // Remove the source of the script
 fsExtra.removeSync(`${root}/src`);
 
+// remove the update files, they belong to the server
+fsExtra.copyFileSync(`${root}/dist/plg_perfectgridga/update_plg.xml`, `${root}/docs/update_plg.xml`);
+fsExtra.copyFileSync(`${root}/dist/mod_perfectgridga/update_mod.xml`, `${root}/docs/update_mod.xml`);
+fsExtra.unlinkSync(`${root}/dist/plg_perfectgridga/update_plg.xml`);
+fsExtra.unlinkSync(`${root}/dist/mod_perfectgridga/update_mod.xml`);
+
 // Make the module
 const archiveMod = archiver('zip', { zlib: { level: 9 } });
-const streamMod = fs.createWriteStream(`${root}/packages/mod_perfectgridga_v${pkg.version}.zip`);
+const streamMod = createWriteStream(`${root}/packages/mod_perfectgridga_v${pkg.version}.zip`);
 
 // Make the plugin
 const archivePlg = archiver('zip', { zlib: { level: 9 } });
-const streamPlg = fs.createWriteStream(`${root}/packages/plg_perfectgridga_v${pkg.version}.zip`);
+const streamPlg = createWriteStream(`${root}/packages/plg_perfectgridga_v${pkg.version}.zip`);
 
 Promise.all([
   new Promise((resolve, reject) => {
@@ -114,10 +128,10 @@ Promise.all([
     streamMod.on('close', _ => resolve());
     archiveMod.finalize();
     if (!fsExtra.existsSync(`${root}/docs/packages`)) {
-      fsExtra.mkdirSync(`${root}/docs/packages`);
+      fsExtra.mkdirSync(`${root}/docs/pkgs`);
     }
 
-    fsExtra.copySync(`${root}/packages`, `${root}/docs/packages`);
+    fsExtra.copySync(`${root}/packages`, `${root}/docs/pkgs`);
   }),
   new Promise((resolve, reject) => {
     archivePlg
@@ -130,11 +144,11 @@ Promise.all([
 
   })
 ]).then(function () {
-  if (!fsExtra.existsSync(`${root}/docs/packages`)) {
-    fsExtra.mkdirSync(`${root}/docs/packages`);
+  if (!fsExtra.existsSync(`${root}/docs/pkgs`)) {
+    fsExtra.mkdirSync(`${root}/docs/pkgs`);
   }
 
-  fsExtra.copySync(`${root}/packages`, `${root}/docs/packages`);
+  fsExtra.copySync(`${root}/packages`, `${root}/docs/pkgs`);
 
   if (fsExtra.existsSync(`${root}/docs/quickstart.md`)) {
     fsExtra.unlinkSync(`${root}/docs/quickstart.md`)
@@ -145,7 +159,66 @@ Promise.all([
  - [Module](/pkgs/mod_perfectgridga_v${pkg.version}.zip ':ignore')
  - [Plugin](/pkgs/plg_perfectgridga_v${pkg.version}.zip ':ignore')
 
-`
+`;
+
   fsExtra.writeFileSync(`${root}/docs/quickstart.md`, quickStartContent.replace('```downloads```', qS), { encoding: 'utf8' });
 
+  // Build the upd server
+  shaPlg = generateChecksum(readFileSync(`${root}/docs/pkgs/plg_perfectgridga_v${pkg.version}.zip`), 'sha512');
+  shaMod = generateChecksum(readFileSync(`${root}/docs/pkgs/mod_perfectgridga_v${pkg.version}.zip`), 'sha512');
+
+  const updPlg = {
+    files: [
+      `${root}/docs/update_plg.xml`,
+    ],
+    from: [
+      '{{name}}',
+      '{{version}}',
+      '{{name}}',
+      '{{filename}}',
+      '{{codeName}}',
+      '{{type}}',
+      '{{folder}}',
+      '{{client}}'
+    ],
+    to: [
+      `PerfectGrid Google Analytics Lightweight Plugin`,
+      pkg.version,
+      `PerfectGrid Google Analytics Lightweight Plugin`,
+      `plg_perfectgridga_v${pkg.version}.zip`,
+      'perfectgridga',
+      'plugin',
+      'system',
+      '0'
+    ]
+  };
+
+  const updMod = {
+    files: [
+      `${root}/docs/update_mod.xml`,
+    ],
+    from: [
+      '{{name}}',
+      '{{version}}',
+      '{{name}}',
+      '{{filename}}',
+      '{{codeName}}',
+      '{{type}}',
+      '{{folder}}',
+      '{{client}}'
+    ],
+    to: [
+      `PerfectGrid Google Analytics Lightweight Module`,
+      pkg.version,
+      `PerfectGrid Google Analytics Lightweight Module`,
+      `mod_perfectgridga_v${pkg.version}.zip`,
+      'perfectgridga',
+      'module',
+      '',
+      '0'
+    ]
+  };
+
+  replace.sync(updPlg);
+  replace.sync(updMod);
 });

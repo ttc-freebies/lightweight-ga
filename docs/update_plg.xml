@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<updates>
+  <update>
+    <name>PerfectGrid Google Analytics Lightweight Plugin</name>
+    <version>1.0.1</version>
+    <infourl title="PerfectGrid Google Analytics Lightweight Plugin"><![CDATA[https://lightweight-ga.netlify.com]]></infourl>
+    <downloads>
+      <downloadurl type="full" format="zip"><![CDATA[https://lightweight-ga.netlify.com/pkgs/plg_perfectgridga_v1.0.1.zip]]></downloadurl>
+    </downloads>
+    <targetplatform name="joomla" version="3.*"/>
+    <element>perfectgridga</element>
+    <type>plugin</type>
+    <folder>system</folder>
+    <client>0</client>
+  </update>
+</updates>
