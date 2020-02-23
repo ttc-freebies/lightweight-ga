@@ -142,8 +142,8 @@ Promise.all([
 
   const quickStartContent = fsExtra.readFileSync(`${root}/docs/quickstart.txt`, { encoding: 'utf8' })
   const qS = `
- - [Module](/packages/mod_perfectgridga_v${pkg.version}.zip ':ignore')
- - [Plugin](/packages/mod_perfectgridga_v${pkg.version}.zip ':ignore')
+ - [Module](/pkgs/mod_perfectgridga_v${pkg.version}.zip ':ignore')
+ - [Plugin](/pkgs/mod_perfectgridga_v${pkg.version}.zip ':ignore')
 
 `
   fsExtra.writeFileSync(`${root}/docs/quickstart.md`, quickStartContent.replace('```downloads```', qS), { encoding: 'utf8' });
