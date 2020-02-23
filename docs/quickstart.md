@@ -11,7 +11,7 @@ Respect your **users** send the least possible JavaScript (without loosing any c
 ## Downloads
 
  - [Module](/pkgs/mod_perfectgridga_v1.0.0.zip ':ignore')
- - [Plugin](/pkgs/mod_perfectgridga_v1.0.0.zip ':ignore')
+ - [Plugin](/pkgs/plg_perfectgridga_v1.0.0.zip ':ignore')
 
 
 
