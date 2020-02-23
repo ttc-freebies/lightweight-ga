@@ -8,7 +8,7 @@ Respect your **users** send the least possible JavaScript (without loosing any c
 
 !> Download and install **either** the module or the plugin
 
+!> Latest vesrion: ```version```
+
 ## Downloads
 ```downloads```
-
-Latest vesrion: ```version```
