@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "node build.js",
-    "docs": "npx http-server ./docs"
+    "docs": "npx server ./docs"
   },
   "repository": {
     "type": "git",
@@ -34,7 +34,7 @@
     "fs-extra": "9.0.0",
     "gist-fetch": "1.0.1",
     "glob": "7.1.6",
-    "http-server": "0.12.3",
+    "server": "1.0.27",
     "jszip": "3.4.0",
     "replace-in-file": "6.0.0",
     "rollup-plugin-babel": "4.4.0"
