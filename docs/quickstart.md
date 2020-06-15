@@ -8,11 +8,11 @@ Respect your **users** send the least possible JavaScript (without loosing any c
 
 !> Download and install **either** the module or the plugin
 
-!> Latest vesrion: 1.0.1
+!> Latest vesrion: 1.0.2
 
 ## Downloads
 
- - [Module](/pkgs/mod_perfectgridga_v1.0.1.zip ':ignore')
- - [Plugin](/pkgs/plg_perfectgridga_v1.0.1.zip ':ignore')
+ - [Module](/pkgs/mod_perfectgridga_v1.0.2.zip ':ignore')
+ - [Plugin](/pkgs/plg_perfectgridga_v1.0.2.zip ':ignore')
 
 

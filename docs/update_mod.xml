@@ -2,10 +2,10 @@
 <updates>
   <update>
     <name>PerfectGrid Google Analytics Lightweight Module</name>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <infourl title="PerfectGrid Google Analytics Lightweight Module"><![CDATA[https://lightweight-ga.netlify.com]]></infourl>
     <downloads>
-      <downloadurl type="full" format="zip"><![CDATA[https://lightweight-ga.netlify.com/pkgs/mod_perfectgridga_v1.0.1.zip]]></downloadurl>
+      <downloadurl type="full" format="zip"><![CDATA[https://lightweight-ga.netlify.com/pkgs/mod_perfectgridga_v1.0.2.zip]]></downloadurl>
     </downloads>
     <targetplatform name="joomla" version="3.*"/>
     <element>perfectgridga</element>
