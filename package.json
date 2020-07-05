@@ -29,7 +29,7 @@
     "@babel/preset-env": "7.10.4",
     "@rollup/plugin-babel": "5.0.3",
     "@rollup/plugin-replace": "2.3.3",
-    "adm-zip": "0.4.14",
+    "adm-zip": "0.4.16",
     "fs-extra": "9.0.1",
     "gist-fetch": "1.0.1",
     "replace-in-file": "6.1.0",
