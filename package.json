@@ -30,7 +30,7 @@
     "@rollup/plugin-babel": "5.2.2",
     "@rollup/plugin-replace": "2.3.3",
     "adm-zip": "0.4.16",
-    "fs-extra": "9.0.1",
+    "fs-extra": "9.1.0",
     "gist-fetch": "1.0.1",
     "replace-in-file": "6.1.0",
     "rimraf": "3.0.2",
