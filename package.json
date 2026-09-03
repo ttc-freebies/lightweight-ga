@@ -26,7 +26,7 @@
   "homepage": "https://github.com/perfectgrid-freebies/lightweight-ga#readme",
   "devDependencies": {
     "@babel/core": "7.18.13",
-    "@babel/preset-env": "7.18.10",
+    "@babel/preset-env": "8.0.2",
     "@rollup/plugin-babel": "6.0.0",
     "@rollup/plugin-replace": "5.0.0",
     "adm-zip": "0.5.9",
